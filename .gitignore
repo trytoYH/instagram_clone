@@ -7,6 +7,6 @@
 # media file
 media/
 
-# migraton files
+# migration files
 content/migrations/
 user/migrations/

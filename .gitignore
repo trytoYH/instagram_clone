@@ -6,3 +6,6 @@
 
 # media file
 media/
+
+# migraton files
+/migratons/

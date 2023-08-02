@@ -10,8 +10,7 @@ from uuid import uuid4
 class Main(APIView):
     def get(self, request):
         feed_list = Feed.objects.all()
-        return render(request, 'insta_clone/main.html', context=dict(feed_list=feed_list))
-    
+        return render(request, '../templates/insta_clone/main.html', context=dict(feed_list=feed_list))    
 class UploadFeed(APIView):
     def post(self, request):
         file = request.FILES['file']

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'content',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__)) # for project templa
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(SETTINGS_PATH, 'templates')], # for project template path
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # for project template path
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,8 +128,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-## Media files
+# Media files
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# User model
+AUTH_USER_MODEL = 'user.User'

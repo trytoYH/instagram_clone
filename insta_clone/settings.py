@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'content',
     'user',
+    'insta_clone',
 ]
 
 MIDDLEWARE = [

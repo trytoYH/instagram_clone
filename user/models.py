@@ -3,20 +3,13 @@ from django.contrib.auth.models import AbstractBaseUser
 
 # Create your models here.
 class User(AbstractBaseUser):
-    name = models.CharField(max_length=30, blank=True, null=True)
-    email = models.EmailField(verbose_name='email', max_length=100, blank=True, null=True, unique=True)
-    user_id = models.CharField(max_length=30, blank=True, null=True)
-    thumbnail = models.CharField(max_length=256, default='default_profile.jpg', blank=True, null=True)
-
-    USERNAME_FIELD = 'id'
-    REQUIRED_FIELDS = ['user_id']
-
-    def __str__(self) -> str:
-        return self.user_id
     
-    @property
-    def is_staff(self):
-        return self.is_admin
-    
+    profile_image = models.TextField(default='')  # profile image
+    nickname = models.CharField(max_length=24, unique=True, default='')
+    name = models.CharField(max_length=24, default='')
+    email = models.EmailField(unique=True, default='')
+
+    USERNAME_FIELD = 'nickname'
+
     class Meta:
-        db_table = 'users'
+        db_table = 'User'
